@@ -27,7 +27,6 @@
   html{scroll-behavior:smooth;scroll-padding-top:76px}
   body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;padding-bottom:0}
   a{color:var(--green)}
-  img{display:none}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
   section{padding:80px 0}
 
@@ -52,7 +51,8 @@
   /* Buttons */
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:700;font-size:16px;line-height:1.2;text-decoration:none;padding:15px 24px;border-radius:14px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;text-align:center}
   .btn:hover{transform:translateY(-2px)}
-  .btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+  .btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--green);outline-offset:3px;box-shadow:0 0 0 6px var(--gold)}
+  .topbar .btn:focus-visible,.topbar a:focus-visible,.hero .btn:focus-visible,.hero a:focus-visible,.dark .btn:focus-visible,.dark summary:focus-visible,.dark a:focus-visible,.snap-side .btn:focus-visible,.snap-side a:focus-visible,footer a:focus-visible,.mobilebar .btn:focus-visible,.mobilebar a:focus-visible{outline-color:var(--gold);box-shadow:none}
   .btn-gold{background:var(--gold);color:var(--ink);box-shadow:0 8px 22px rgba(232,177,58,.35)}
   .btn-gold:hover{background:#f0bd4f}
   .btn-green{background:var(--green);color:#fff;box-shadow:0 8px 20px rgba(46,94,30,.28)}
@@ -93,7 +93,7 @@
   .hero-visual{position:relative}
   .score-card{background:rgba(255,255,255,.96);color:var(--ink);border-radius:24px;padding:26px;box-shadow:var(--shadow-lg);transform:rotate(1.5deg)}
   .score-card .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--green);background:#e9f1e3;border-radius:999px;padding:5px 11px;margin-bottom:14px}
-  .score-card h4{font-size:17px;margin-bottom:16px;line-height:1.3}
+  .score-card .card-title{font-size:17px;margin-bottom:16px;line-height:1.3;font-weight:700}
   .pattern{display:flex;align-items:center;gap:12px;margin:12px 0}
   .pattern .lbl{flex:none;width:92px;font-size:13px;font-weight:600;color:var(--muted)}
   .pattern .bar{flex:1;height:12px;background:#ece6d5;border-radius:999px;overflow:hidden}
@@ -147,12 +147,12 @@
   .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:52px;align-items:start}
   .portrait{background:linear-gradient(160deg,var(--green-deep),var(--green));border-radius:28px;padding:40px 30px;color:#fff;text-align:center;box-shadow:var(--shadow-lg)}
   .portrait .mono{width:120px;height:120px;border-radius:50%;margin:0 auto 20px;background:linear-gradient(135deg,var(--gold),#f4d37e);color:var(--ink);display:grid;place-items:center;font-size:44px;font-weight:900;letter-spacing:-1px;box-shadow:0 0 0 6px rgba(255,255,255,.14)}
-  .portrait h3{color:#fff;font-size:24px}
+  .portrait .portrait-name{color:#fff;font-size:24px;font-weight:700;line-height:1.25;margin:0}
   .portrait p{color:#cfd8c2;font-size:14.5px;margin-top:6px}
   .portrait .tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
   .portrait .tags span{font-size:12px;font-weight:700;background:rgba(255,255,255,.12);padding:6px 11px;border-radius:999px}
   .story{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:16px;padding:22px 24px;margin-bottom:16px;box-shadow:var(--shadow)}
-  .story h4{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--green);margin-bottom:8px}
+  .story h3{font-size:12px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;color:var(--green);margin-bottom:8px;line-height:1.6}
   .story p{font-size:16px;color:var(--ink)}
   .about-note{font-size:15.5px;color:var(--muted);margin-top:20px}
 
@@ -317,7 +317,7 @@ figure.illus{margin:28px auto;max-width:880px;padding:0 20px}figure.illus img{wi
     <div class="hero-visual" aria-hidden="true">
       <div class="score-card">
         <span class="tag">Pattern found</span>
-        <h4>Same complaint, different words</h4>
+        <p class="card-title">Same complaint, different words</p>
         <div class="pattern"><span class="lbl">Cleanliness</span><div class="bar"><i class="warn" style="width:86%"></i></div></div>
         <div class="pattern"><span class="lbl">Check-in</span><div class="bar"><i class="warn" style="width:58%"></i></div></div>
         <div class="pattern"><span class="lbl">Unanswered</span><div class="bar"><i class="warn" style="width:44%"></i></div></div>
@@ -331,7 +331,7 @@ figure.illus{margin:28px auto;max-width:880px;padding:0 20px}figure.illus img{wi
 </section>
 
 <!-- 3. PROBLEM IN THE OWNER'S WORDS -->
-<figure class="illus"><img src="illustration-common-room.webp" alt="Illustration of a hostel common room — front desk, key rack, noticeboard and sofa"><figcaption>Illustration. Your hostel is the real one — I work from your reviews, listings and photos, not stock pictures of somebody else's property.</figcaption></figure>
+<figure class="illus"><img width="1920" height="1280" src="illustration-common-room.webp" alt="Illustration of a hostel common room — front desk, key rack, noticeboard and sofa"><figcaption>Illustration. Your hostel is the real one — I work from your reviews, listings and photos, not stock pictures of somebody else's property.</figcaption></figure>
 <section class="light" id="problem" aria-labelledby="problem-title">
   <div class="wrap">
     <div class="section-head center">
@@ -450,7 +450,7 @@ Guests aren't describing bad staff. <b>They're describing missing systems.</b></
   <div class="wrap about">
     <div class="portrait">
       <div class="mono" aria-hidden="true">JF</div>
-      <h3>Jared Fontaine</h3>
+      <p class="portrait-name">Jared Fontaine</p>
       <p>Hostel operator &amp; customer-experience professional</p>
       <div class="tags">
         <span>10+ hostels</span><span>US &amp; Europe</span><span>Housekeeping</span><span>Assistant manager</span>
@@ -462,15 +462,15 @@ Guests aren't describing bad staff. <b>They're describing missing systems.</b></
       <p class="lede" style="color:var(--muted);margin-bottom:26px">I've worked 10+ hostels across the US and Europe. Three things I've done that shaped how I fix reviews:</p>
 
       <div class="story">
-        <h4>Roster system · Hawaii</h4>
+        <h3>Roster system · Hawaii</h3>
         <p>As assistant manager at a Hawaii hostel, I built a booking-roster system that cut overbookings 30%.</p>
       </div>
       <div class="story">
-        <h4>Work-trader team · Maui</h4>
+        <h3>Work-trader team · Maui</h3>
         <p>I ran housekeeping and a 4-person work-trader team in Maui, and the cleanliness rating lifted.</p>
       </div>
       <div class="story">
-        <h4>Bed-bug protocol · ~$50</h4>
+        <h3>Bed-bug protocol · ~$50</h3>
         <p>I put together a bed-bug prevention protocol that costs about $50 to run, not thousands.</p>
       </div>
 
@@ -480,7 +480,7 @@ Guests aren't describing bad staff. <b>They're describing missing systems.</b></
 </section>
 
 <!-- 7. HOW IT WORKS -->
-<figure class="illus"><img src="illustration-bunks.webp" alt="Illustration of a hostel bunk room made up with fresh linen and folded towels"><figcaption>Illustration. Cleanliness is the category guests judge hardest — and the one a good rota fixes first.</figcaption></figure>
+<figure class="illus"><img width="1920" height="1280" src="illustration-bunks.webp" alt="Illustration of a hostel bunk room made up with fresh linen and folded towels"><figcaption>Illustration. Cleanliness is the category guests judge hardest — and the one a good rota fixes first.</figcaption></figure>
 <section class="light" id="how" aria-labelledby="how-title">
   <div class="wrap">
     <div class="section-head center">
@@ -511,7 +511,7 @@ Guests aren't describing bad staff. <b>They're describing missing systems.</b></
 </section>
 
 <!-- 8. OFFERS AS A LADDER -->
-<figure class="illus"><img src="illustration-reviews.webp" alt="Illustration of a hostel manager reading guest reviews on a laptop, stars and speech bubbles above the screen"><figcaption>Illustration. Every Snapshot and Audit is read by hand — no dashboard export, no AI summary.</figcaption></figure>
+<figure class="illus"><img width="1920" height="1280" src="illustration-reviews.webp" alt="Illustration of a hostel manager reading guest reviews on a laptop, stars and speech bubbles above the screen"><figcaption>Illustration. Every Snapshot and Audit is read by hand — no dashboard export, no AI summary.</figcaption></figure>
 <section class="white" id="ladder" aria-labelledby="ladder-title" style="padding-bottom:36px">
   <div class="wrap">
     <div class="section-head center" style="margin-bottom:28px">
@@ -626,7 +626,7 @@ Guests aren't describing bad staff. <b>They're describing missing systems.</b></
 </section>
 
 <!-- 11. FAQ -->
-<figure class="illus"><img src="illustration-turnover.webp" alt="Illustration of a housekeeper making up a bunk bed with a turnover checklist on a clipboard"><figcaption>Illustration. The Sprint installs the unglamorous systems — rotas, checklists, turnover standards — that reviews are actually made of.</figcaption></figure>
+<figure class="illus"><img width="1920" height="1280" src="illustration-turnover.webp" alt="Illustration of a housekeeper making up a bunk bed with a turnover checklist on a clipboard"><figcaption>Illustration. The Sprint installs the unglamorous systems — rotas, checklists, turnover standards — that reviews are actually made of.</figcaption></figure>
 <section class="light" id="faq" aria-labelledby="faq-title">
   <div class="wrap">
     <div class="section-head center">
